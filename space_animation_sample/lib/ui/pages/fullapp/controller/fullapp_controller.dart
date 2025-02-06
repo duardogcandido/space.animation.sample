@@ -2,7 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutx/core/state_management/state_management.dart';
 import 'package:space_animation_sample/ui/pages/login/view/login_view.dart';
 
-class SplashController extends FxController{
+class FullAppController extends FxController{
+  bool uiLoading = false;
+  late PageController pageController;
+  late int bottomNavigationIndex;
 
   @override
   void initState() {
@@ -11,13 +14,11 @@ class SplashController extends FxController{
   }
 
   fetchData() async {
-    await Future.delayed(const Duration(seconds: 5)).whenComplete(() {
-      goToLoginPage();
-    });
+    pageController = PageController();
+    bottomNavigationIndex = pageController.initialPage;
   }
 
-  goToLoginPage(){
-    Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => const LoginPage()));
+  goTo(){
   }
 
   @override
@@ -28,7 +29,7 @@ class SplashController extends FxController{
 
   @override
   String getTag() {
-    return 'splash_controller';
+    return 'fullapp_controller';
   }
 
 }

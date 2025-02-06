@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutx/core/state_management/state_management.dart';
 import 'package:flutx/utils/validators/string_validator.dart';
-import 'package:space_animation_sample/utils/info_controller.dart';
+import 'package:space_animation_sample/ui/pages/fullapp/view/fullapp_view.dart';
+import 'package:awesome_snackbar_content/awesome_snackbar_content.dart';
 
 class LoginController extends FxController{
   late TextEditingController emailTE, passwordTE;
@@ -41,20 +42,18 @@ class LoginController extends FxController{
 
   String? validateEmail(String? text) {
     if (text == null || text.isEmpty) {
-      return "Please enter email";
+      return "Insira um email";
     } else if (FxStringValidator.isEmail(text)) {
-      return "Please enter valid email";
+      return "Insira um email valido";
     }
     return null;
   }
 
   String? validatePassword(String? text) {
     if (text == null || text.isEmpty) {
-      return "Please enter password";
-    } else if (!FxStringValidator.validateStringRange(
-      text,
-    )) {
-      return "Password length must between 8 and 20";
+      return "Insira uma senha";
+    } else if (!FxStringValidator.validateStringRange(text)) {
+      return "A senha deve conter entre 8 e 16 caracteres";
     }
     return null;
   }
@@ -63,13 +62,52 @@ class LoginController extends FxController{
     if (formKey.currentState!.validate()) {
       // teddyController.coverEyes(false);
       // teddyController.setSuccess();
-      Info.message("Login success", context: context);
+      var snackBar = SnackBar(
+        elevation: 0,
+        behavior: SnackBarBehavior.floating,
+        duration: const Duration(seconds: 2),
+        backgroundColor: Colors.transparent,
+        content: AwesomeSnackbarContent(
+          title: 'Login!',
+          message:
+          'Feito com sucesso, Bem Vindo(a)!',
+          contentType: ContentType.success,
+        ),
+      );
+      ScaffoldMessenger.of(context)
+        ..hideCurrentSnackBar()
+        ..showSnackBar(snackBar);
+
+      await Future.delayed(const Duration(seconds: 2)).whenComplete(() {
+        goToFullAppPage();
+      });
       // await goToConfig();
     } else {
-      // teddyController.setFail();
-      Info.error("Login failed", context: context);
+      var snackBar = SnackBar(
+        elevation: 0,
+        behavior: SnackBarBehavior.floating,
+        duration: const Duration(seconds: 2),
+        backgroundColor: Colors.transparent,
+        content: AwesomeSnackbarContent(
+          title: 'Login!',
+          message:
+          'Falha ao fazer login, tente novamente!',
+          contentType: ContentType.failure,
+        ),
+      );
+      ScaffoldMessenger.of(context)
+        ..hideCurrentSnackBar()
+        ..showSnackBar(snackBar);
     }
+
+
   }
+
+
+  goToFullAppPage(){
+    Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => const FullAppPage()));
+  }
+
 
   @override
   void dispose() {

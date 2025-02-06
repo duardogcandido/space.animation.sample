@@ -38,6 +38,8 @@ dependencies:
   rive: ^0.13.20
   font_awesome_flutter: ^10.8.0
   google_fonts: ^6.2.1
+  awesome_snackbar_content: ^0.1.5
+  curved_labeled_navigation_bar: ^2.0.5
 
 dev_dependencies:
   flutter_test:
@@ -58,6 +60,8 @@ flutter:
   uses-material-design: true
   assets:
     - assets/animations/rive/
+    - assets/images/
+    - assets/ico/
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

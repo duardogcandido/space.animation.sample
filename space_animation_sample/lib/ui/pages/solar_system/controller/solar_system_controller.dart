@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutx/core/state_management/state_management.dart';
 import 'package:space_animation_sample/ui/pages/login/view/login_view.dart';
 
-class SplashController extends FxController{
+class SolarSystemController extends FxController{
+  bool uiLoading = false;
+  int selectedRailsIndex = 0;
 
   @override
   void initState() {
@@ -11,13 +13,9 @@ class SplashController extends FxController{
   }
 
   fetchData() async {
-    await Future.delayed(const Duration(seconds: 5)).whenComplete(() {
-      goToLoginPage();
-    });
   }
 
-  goToLoginPage(){
-    Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => const LoginPage()));
+  goTo(){
   }
 
   @override
@@ -28,7 +26,7 @@ class SplashController extends FxController{
 
   @override
   String getTag() {
-    return 'splash_controller';
+    return 'solar_system_controller';
   }
 
 }
