@@ -77,6 +77,7 @@ class _FullAppPageState extends State<FullAppPage> {
               ),
               body: PageView(
                 controller: controller.pageController,
+                physics: NeverScrollableScrollPhysics(),
                 onPageChanged: (index) {
                   controller.bottomNavigationIndex = index;
                   setState(() {

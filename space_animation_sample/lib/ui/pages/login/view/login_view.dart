@@ -126,7 +126,7 @@ class _LoginPageState extends State<LoginPage> {
                                       setState(() { });
                                     },
                                     child: Icon(
-                                      controller.isObscured ? FontAwesomeIcons.eye : FontAwesomeIcons.eyeSlash,
+                                      controller.isObscured ? FontAwesomeIcons.eyeSlash : FontAwesomeIcons.eye,
                                       color: theme.colorScheme.primary,
                                     ),
                                   ),
