@@ -137,101 +137,17 @@ class _SolarSystemPageState extends State<SolarSystemPage> {
                         ),
                       ],
                     ),
-                    imageOnSelectedIndex()
+                    Expanded(
+                        child: SingleChildScrollView(
+                            controller: ScrollController(),
+                            physics: BouncingScrollPhysics(),
+                            scrollDirection: Axis.vertical,
+                            child: controller.imageOnSelectedIndex()))
                   ],
                 ),
               ],
             ),
           );
         });
-  }
-
-  Widget imageOnSelectedIndex() {
-    var imageWidget = Image.asset('assets/images/sol.png');
-    var planetSelected = 'Sol';
-    var aboutSelected = controller.sunText();
-    switch (controller.selectedRailsIndex) {
-      case 0:
-        imageWidget = Image.asset(
-          'assets/images/sol.png',
-        );
-        planetSelected = 'Sol';
-      case 1:
-        imageWidget = Image.asset(
-          'assets/images/mercurio.png',
-        );
-        planetSelected = 'Mercúrio';
-      case 2:
-        imageWidget = Image.asset(
-          'assets/images/venus.png',
-        );
-        planetSelected = 'Vênus';
-      case 3:
-        imageWidget = Image.asset(
-          'assets/images/planeta-terra.png',
-        );
-        planetSelected = 'Terra';
-      case 4:
-        imageWidget = Image.asset(
-          'assets/images/lua-nova.png',
-        );
-        planetSelected = 'Lua';
-      case 5:
-        imageWidget = Image.asset(
-          'assets/images/marte.png',
-        );
-        planetSelected = 'Marte';
-      case 6:
-        imageWidget = Image.asset(
-          'assets/images/jupiter.png',
-        );
-        planetSelected = 'Júpiter';
-      case 7:
-        imageWidget = Image.asset(
-          'assets/images/saturno.png',
-        );
-        planetSelected = 'Saturno';
-      case 8:
-        imageWidget = Image.asset(
-          'assets/images/urano.png',
-        );
-        planetSelected = 'Urano';
-      case 9:
-        imageWidget = Image.asset(
-          'assets/images/netuno.png',
-        );
-        planetSelected = 'Netuno';
-      default:
-        imageWidget = Image.asset(
-          'assets/images/sol.png',
-        );
-        planetSelected = 'Sol';
-    }
-  return Expanded(
-  child: AnimatedSwitcher(
-    duration: Duration(milliseconds: 1000),
-    transitionBuilder: (Widget child, Animation<double> animation) {
-      return ScaleTransition(scale: animation, child: child);
-    },
-    child: Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      crossAxisAlignment: CrossAxisAlignment.center,
-      key: ValueKey<String>(planetSelected),
-      children: [
-        FxContainer.transparent(
-          paddingAll: 24,
-          child: imageWidget,
-        ),
-        FxText.titleLarge(planetSelected,
-            color: theme.colorScheme.onPrimary, letterSpacing: 0.3),
-        FxContainer.transparent(
-          child: FxText.bodyMedium(aboutSelected,
-              color: theme.colorScheme.onPrimary, letterSpacing: 0.3),
-        ),
-        FxSpacing.height(90),
-      ],
-    ),
-  ),
-  );
   }
 }
