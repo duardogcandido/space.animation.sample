@@ -8,6 +8,7 @@ import 'package:space_animation_sample/ui/pages/fullapp/controller/fullapp_contr
 import 'package:space_animation_sample/ui/pages/home/view/home_view.dart';
 import 'package:space_animation_sample/ui/pages/solar_system/view/solar_system_view.dart';
 import 'package:space_animation_sample/ui/themes/app_theme.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class FullAppPage extends StatefulWidget {
   const FullAppPage({super.key});
@@ -19,6 +20,15 @@ class FullAppPage extends StatefulWidget {
 class _FullAppPageState extends State<FullAppPage> {
   late FullAppController controller;
   late ThemeData theme;
+  final Uri _url = Uri.parse('https://clicksaber.com.br');
+  final Uri _urlToken = Uri.parse('https://clicksaber.com.br/auth-seduc?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJJRCI6IjEwMDAwMDAwOTIwNjI4IiwiTG9naW4iOiJyZzI3NzA1OTMyeHNwIiwiRW1haWwiOiJld2VydGhvbmRhbmllbEBwcm9mLmVkdWNhY2FvLnNwLmdvdi5iciIsIk5vbWUiOiJFV0VSVEhPTiBEQU5JRUwgVkFaIiwiUGVyZmlsU2VkIjoiWzExNF0iLCJSZWdyYSI6IjQiLCJUdXJtYXMiOiJbXSIsIm5iZiI6MTc1NDQ4MzE3NCwiZXhwIjoxNzU0NTY5NTc0LCJpYXQiOjE3NTQ0ODMxNzR9.u08hKStDxvJZ4tvFHFJycjo6uvcdci2h0kkLWw6DW8E&tipoUsuario=servidor');
+  final Uri _urlSemToken = Uri.parse('https://clicksaber.com.br/auth-seduc?token=');
+  final Uri _urlTokenInvalido = Uri.parse('https://clicksaber.com.br/auth-seduc?token=sdfwe45asdfas2345asdfq23r');
+
+  final Uri _appLink = Uri.parse('app://clicksaber.com.br');
+  final Uri _appLinkToken = Uri.parse('app://clicksaber.com.br/auth-seduc?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJJRCI6IjEwMDAwMDAwOTIwNjI4IiwiTG9naW4iOiJyZzI3NzA1OTMyeHNwIiwiRW1haWwiOiJld2VydGhvbmRhbmllbEBwcm9mLmVkdWNhY2FvLnNwLmdvdi5iciIsIk5vbWUiOiJFV0VSVEhPTiBEQU5JRUwgVkFaIiwiUGVyZmlsU2VkIjoiWzExNF0iLCJSZWdyYSI6IjQiLCJUdXJtYXMiOiJbXSIsIm5iZiI6MTc1NDQ4MzE3NCwiZXhwIjoxNzU0NTY5NTc0LCJpYXQiOjE3NTQ0ODMxNzR9.u08hKStDxvJZ4tvFHFJycjo6uvcdci2h0kkLWw6DW8E&tipoUsuario=servidor');
+  final Uri _appLinkSemtoken = Uri.parse('app://clicksaber.com.br/auth-seduc?token=');
+  final Uri _appLinktokenInvalido = Uri.parse('app://clicksaber.com.br/auth-seduc?token=sdfwe45asdfas2345asdfq23r');
 
   @override
   void initState() {
@@ -90,8 +100,71 @@ class _FullAppPageState extends State<FullAppPage> {
                   Container(
                     color: Colors.green,
                   ),
-                  Container(
-                    color: Colors.orange,
+                  SingleChildScrollView(
+                    controller: ScrollController(),
+                    physics: ScrollPhysics(),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        ElevatedButton(
+                            onPressed: () async{
+                              if (!await launchUrl(_url)) {
+                                throw Exception('Could not launch $_url');
+                              }
+                            },
+                            child: Text('Url')),
+                        ElevatedButton(
+                            onPressed: () async{
+                              if (!await launchUrl(_urlToken)) {
+                                throw Exception('Could not launch $_urlToken');
+                              }
+                            },
+                            child: Text('Url token')),
+                        ElevatedButton(
+                            onPressed: () async{
+                              if (!await launchUrl(_urlSemToken)) {
+                                throw Exception('Could not launch $_urlSemToken');
+                              }
+                            },
+                            child: Text('Url sem token')),
+                        ElevatedButton(
+                            onPressed: () async{
+                              if (!await launchUrl(_urlTokenInvalido)) {
+                                throw Exception('Could not launch $_urlTokenInvalido');
+                              }
+                            },
+                            child: Text('Url token invalido')),
+                        ElevatedButton(
+                            onPressed: () async{
+                              if (!await launchUrl(_appLink)) {
+                                throw Exception('Could not launch $_appLink');
+                              }
+                            },
+                            child: Text('App link')),
+                        ElevatedButton(
+                            onPressed: () async{
+                              if (!await launchUrl(_appLinkToken)) {
+                                throw Exception('Could not launch $_appLinkToken');
+                              }
+                            },
+                            child: Text('App link token')),
+                        ElevatedButton(
+                            onPressed: () async{
+                              if (!await launchUrl(_appLinkSemtoken)) {
+                                throw Exception('Could not launch $_appLinkSemtoken');
+                              }
+                            },
+                            child: Text('App link sem token')),
+                        ElevatedButton(
+                            onPressed: () async{
+                              if (!await launchUrl(_appLinktokenInvalido)) {
+                                throw Exception('Could not launch $_appLinktokenInvalido');
+                              }
+                            },
+                            child: Text('App link token invalido'))
+                      ],
+                    ),
                   ),
                 ],
               ),

@@ -49,7 +49,7 @@ class AppTheme {
         backgroundColor: Color(0xffffffff),
         iconTheme: IconThemeData(color: Color(0xff495057)),
         actionsIconTheme: IconThemeData(color: Color(0xff495057))),
-    cardTheme: CardTheme(color: Color(0xfff0f0f0)),
+    // cardTheme: CardTheme(color: Color(0xfff0f0f0)),
     cardColor: Color(0xfff0f0f0),
     textTheme: TextTheme(
         titleMedium: GoogleFonts.aBeeZee(), bodyMedium: GoogleFonts.abel()),
@@ -57,7 +57,7 @@ class AppTheme {
         primary: Color(0xfffc007e),
         secondary: Color(0xff07efc6),
         seedColor: Color(0xfffc007e),
-        surfaceDim: Color.fromRGBO(211, 211, 211, 0.5),
+        surfaceDim: Color.fromRGBO(211, 211, 211, 0.999),
         brightness: Brightness.light),
     floatingActionButtonTheme: FloatingActionButtonThemeData(
         backgroundColor: Color(0xff3C4EC5),
@@ -70,14 +70,14 @@ class AppTheme {
     dividerTheme: DividerThemeData(color: Color(0xffe8e8e8), thickness: 1),
     dividerColor: Color(0xffe8e8e8),
     bottomAppBarTheme: BottomAppBarTheme(color: Color(0xffeeeeee), elevation: 2),
-    tabBarTheme: TabBarTheme(
-      unselectedLabelColor: Color(0xff495057),
-      labelColor: Color(0xff3d63ff),
-      indicatorSize: TabBarIndicatorSize.label,
-      indicator: UnderlineTabIndicator(
-        borderSide: BorderSide(color: Color(0xff3d63ff), width: 2.0),
-      ),
-    ),
+    // tabBarTheme: TabBarTheme(
+    //   unselectedLabelColor: Color(0xff495057),
+    //   labelColor: Color(0xff3d63ff),
+    //   indicatorSize: TabBarIndicatorSize.label,
+    //   indicator: UnderlineTabIndicator(
+    //     borderSide: BorderSide(color: Color(0xff3d63ff), width: 2.0),
+    //   ),
+    // ),
     checkboxTheme: CheckboxThemeData(
       checkColor: MaterialStateProperty.all(Color(0xffeeeeee)),
       fillColor: MaterialStateProperty.all(Color(0xff3C4EC5)),
@@ -139,10 +139,13 @@ class AppTheme {
     scaffoldBackgroundColor: Color(0xff232121),
     canvasColor: Colors.transparent,
     appBarTheme: AppBarTheme(backgroundColor: Color(0xff161616)),
-    cardTheme: CardTheme(color: Color(0xff222327)),
+    // cardTheme: CardTheme(color: Color(0xff222327)),
     cardColor: Color(0xff222327),
     colorScheme: ColorScheme.fromSeed(
-        seedColor: Color(0xff069DEF), brightness: Brightness.dark),
+      seedColor: Color(0xff069DEF),
+      brightness: Brightness.dark,
+      surfaceDim: Color.fromRGBO(211, 211, 211, 0.999),
+    ),
     inputDecorationTheme: InputDecorationTheme(
       focusedBorder: OutlineInputBorder(
         borderRadius: BorderRadius.all(Radius.circular(4)),
@@ -167,14 +170,14 @@ class AppTheme {
         hoverColor: Color(0xff069DEF),
         foregroundColor: Colors.white),
     bottomAppBarTheme: BottomAppBarTheme(color: Color(0xff464c52), elevation: 2),
-    tabBarTheme: TabBarTheme(
-      unselectedLabelColor: Color(0xff495057),
-      labelColor: Color(0xff069DEF),
-      indicatorSize: TabBarIndicatorSize.label,
-      indicator: UnderlineTabIndicator(
-        borderSide: BorderSide(color: Color(0xff069DEF), width: 2.0),
-      ),
-    ),
+    // tabBarTheme: TabBarTheme(
+    //   unselectedLabelColor: Color(0xff495057),
+    //   labelColor: Color(0xff069DEF),
+    //   indicatorSize: TabBarIndicatorSize.label,
+    //   indicator: UnderlineTabIndicator(
+    //     borderSide: BorderSide(color: Color(0xff069DEF), width: 2.0),
+    //   ),
+    // ),
     switchTheme: SwitchThemeData(
       trackColor: MaterialStateProperty.resolveWith((state) {
         const Set<MaterialState> interactiveStates = <MaterialState>{

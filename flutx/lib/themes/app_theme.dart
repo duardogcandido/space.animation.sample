@@ -53,7 +53,7 @@ class FxAppTheme {
         actionsIconTheme: IconThemeData(color: Color(0xff495057))),
 
     /// Card Theme
-    cardTheme: CardTheme(color: Color(0xfff0f0f0)),
+    // cardTheme: CardTheme(color: Color(0xfff0f0f0)),
     cardColor: Color(0xfff0f0f0),
 
     /// Colorscheme
@@ -79,14 +79,14 @@ class FxAppTheme {
     BottomAppBarTheme(color: Color(0xffeeeeee), elevation: 2),
 
     /// Tab bar Theme
-    tabBarTheme: TabBarTheme(
-      unselectedLabelColor: Color(0xff495057),
-      labelColor: Color(0xff3d63ff),
-      indicatorSize: TabBarIndicatorSize.label,
-      indicator: UnderlineTabIndicator(
-        borderSide: BorderSide(color: Color(0xff3d63ff), width: 2.0),
-      ),
-    ),
+    // tabBarTheme: TabBarTheme(
+    //   unselectedLabelColor: Color(0xff495057),
+    //   labelColor: Color(0xff3d63ff),
+    //   indicatorSize: TabBarIndicatorSize.label,
+    //   indicator: UnderlineTabIndicator(
+    //     borderSide: BorderSide(color: Color(0xff3d63ff), width: 2.0),
+    //   ),
+    // ),
 
     /// CheckBox theme
     checkboxTheme: CheckboxThemeData(
@@ -170,7 +170,7 @@ class FxAppTheme {
     appBarTheme: AppBarTheme(backgroundColor: Color(0xff161616)),
 
     /// Card Theme
-    cardTheme: CardTheme(color: Color(0xff222327)),
+    // cardTheme: CardTheme(color: Color(0xff222327)),
     cardColor: Color(0xff222327),
 
     /// Colorscheme
@@ -211,14 +211,14 @@ class FxAppTheme {
     BottomAppBarTheme(color: Color(0xff464c52), elevation: 2),
 
     /// Tab bar Theme
-    tabBarTheme: TabBarTheme(
-      unselectedLabelColor: Color(0xff495057),
-      labelColor: Color(0xff069DEF),
-      indicatorSize: TabBarIndicatorSize.label,
-      indicator: UnderlineTabIndicator(
-        borderSide: BorderSide(color: Color(0xff069DEF), width: 2.0),
-      ),
-    ),
+    // tabBarTheme: TabBarTheme(
+    //   unselectedLabelColor: Color(0xff495057),
+    //   labelColor: Color(0xff069DEF),
+    //   indicatorSize: TabBarIndicatorSize.label,
+    //   indicator: UnderlineTabIndicator(
+    //     borderSide: BorderSide(color: Color(0xff069DEF), width: 2.0),
+    //   ),
+    // ),
 
     ///Switch Theme
     switchTheme: SwitchThemeData(

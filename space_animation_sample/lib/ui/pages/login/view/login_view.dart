@@ -87,11 +87,10 @@ class _LoginPageState extends State<LoginPage> {
                             TrackingTextInput(
                               style: FxTextStyle.bodyMedium(),
                               decoration: InputDecoration(
-                                  floatingLabelBehavior:
-                                  FloatingLabelBehavior.never,
+                                  floatingLabelBehavior: FloatingLabelBehavior.never,
                                   filled: true,
                                   isDense: true,
-                                  fillColor: theme.cardTheme.color,
+                                  fillColor: theme.indicatorColor,
                                   prefixIcon: Icon(
                                     FontAwesomeIcons.envelope,
                                     color: theme.colorScheme.primary,
@@ -115,7 +114,7 @@ class _LoginPageState extends State<LoginPage> {
                                   floatingLabelBehavior: FloatingLabelBehavior.never,
                                   filled: true,
                                   isDense: true,
-                                  fillColor: theme.cardTheme.color,
+                                  fillColor: theme.indicatorColor,
                                   prefixIcon: Icon(
                                     FontAwesomeIcons.lock,
                                     color: theme.colorScheme.primary,

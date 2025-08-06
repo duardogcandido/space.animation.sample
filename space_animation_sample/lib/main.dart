@@ -32,7 +32,7 @@ class MyApp extends StatelessWidget {
       builder: (BuildContext context, AppNotifier value, Widget? child) {
         return MaterialApp(
           debugShowCheckedModeBanner: false,
-          theme: AppTheme.theme,
+          theme: AppTheme.darkTheme,
           builder: (context, child) {
             return Directionality(
               textDirection: AppTheme.textDirection,

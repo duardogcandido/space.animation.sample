@@ -16,7 +16,6 @@ class LoginController extends FxController{
     fetchData();
   }
 
-
   void fetchData() async{
     super.initState();
     emailTE = TextEditingController(text: 'teste@testeemail.com.br');
@@ -103,11 +102,9 @@ class LoginController extends FxController{
 
   }
 
-
   goToFullAppPage(){
     Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => const FullAppPage()));
   }
-
 
   @override
   void dispose() {
@@ -119,5 +116,4 @@ class LoginController extends FxController{
   String getTag() {
     return 'login_controller';
   }
-
 }
